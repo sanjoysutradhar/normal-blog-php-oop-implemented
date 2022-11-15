@@ -12,7 +12,7 @@
                             <p>Description: <?php echo $blog['description']?></p>
                         </div>
                         <div class="card-footer">
-                            <a href="" class="btn btn-info">Read More..</a>
+                            <a href="action.php?page=detail&&id=<?php echo $blog['id']?>" class="btn btn-info">Read More..</a>
                         </div>
                     </div>
                 </div>

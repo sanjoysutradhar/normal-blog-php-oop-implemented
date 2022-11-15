@@ -1,3 +1,5 @@
+
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -17,12 +19,19 @@
             <ul class="navbar-nav">
                 <li><a href="action.php?page=home" class="nav-link">Home</a></li>
                 <li><a href="action.php?page=all-blog" class="nav-link">All Blog</a></li>
-                <li><a href="action.php?page=add-blog" class="nav-link">Add blog</a></li>
-                <li><a href="action.php?page=manage-blog" class="nav-link">Manage blog</a></li>
+                <?php if(isset($_SESSION['id'])) { ?>
+                    <li><a href="action.php?page=add-blog" class="nav-link">Add blog</a></li>
+                    <li><a href="action.php?page=manage-blog" class="nav-link">Manage blog</a></li>
+                <?php } ?>
             </ul>
             <ul class="navbar-nav">
-                <li><a href="#" class="nav-link">Log in</a></li>
-                <li><a href="#" class="nav-link">Registration</a></li>
+                <?php if(isset($_SESSION['id'])){?>
+                    <li><a href="action.php?page=logout" class="nav-link">Log out</a></li>
+                <?php } else { ?>
+                    <li><a href="action.php?page=login" class="nav-link">Log in</a></li>
+                    <li><a href="#" class="nav-link">Registration</a></li>
+                <?php } ?>
+
             </ul>
         </div>
     </nav>

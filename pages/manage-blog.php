@@ -1,3 +1,8 @@
+<?php
+if (!isset($_SESSION['id'])){
+    header('Location: action.php?page=login');
+}
+?>
 <?php include "pages/header.php"?>
 <section class="py-5 bg-info">
     <div class="container">
@@ -9,6 +14,7 @@
                     </div>
                     <div class="card-body">
                         <h4 class="text-center text-success"><?php echo $result; ?></h4>
+                        </h1>
                         <table class="table table-bordered table-hover">
                             <thead>
                             <tr>
